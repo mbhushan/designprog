@@ -1,5 +1,9 @@
 
 
+def func_sumofsquares(num):
+    return sum([x**2 for x in range(num+1)])
+
+
 def calc_sumofsquares(num):
     if not isinstance(num, (int, long)):
         return None
@@ -13,6 +17,7 @@ def main():
     num = input("Enter number: ")
     ans = calc_sumofsquares(num)
     print "Sum of Squares: ", ans
+    print "Functional style result: ", func_sumofsquares(num)
 
 
 if __name__ == '__main__':
