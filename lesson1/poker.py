@@ -1,7 +1,15 @@
 
 def poker(hands):
     """ return the best hand, poker([hand,..]) => hand """
-    return max(hands, key=hand_rank)
+    return allmax(hands, key=hand_rank)
+
+
+def allmax(iterable, key=None):
+    """ return a list of all items equal to the max of the iterable """
+    max_hand = max(iterable, key=hand_rank)
+    max_val = hand_rank(max_hand)
+    result = [h for h in iterable if hand_rank(h) == max_val]
+    return result
 
 
 def hand_rank(hand):
