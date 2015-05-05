@@ -27,6 +27,27 @@ def hand_rank(hand):
         return (0, ranks)
 
 
+def card_ranks(hand):
+    """ return a list of ranks - sorted by highest rank first """
+    ranks = [r for r,s in cards]
+
+    for n,r in enumerate(ranks):
+        if r == 'T':
+            ranks[n] = 10
+        elif r == 'J':
+            ranks[n] = 11
+        elif r == 'Q':
+            ranks[n] = 12
+        elif r == 'K':
+            ranks[n] = 13
+        elif r == 'A':
+            ranks[n] = 14
+        else:
+            ranks[n] = int(r)
+    ranks.sort(reverse=True)
+    return ranks
+
+
 def test():
     """Test cases for the functions in poker program """
     sf = "6C 7C 8C 9C TC".split() # Straight Flush
