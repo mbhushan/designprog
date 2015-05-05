@@ -1,5 +1,4 @@
 import random
-import random
 
 
 def deal(numhands, n=5, deck=[r+s for r in "23456789TJQKA" for s in "SHDC"]):
@@ -8,7 +7,8 @@ def deal(numhands, n=5, deck=[r+s for r in "23456789TJQKA" for s in "SHDC"]):
     return [deck[n*i:n*(i+1)] for i in range(numhands)]
 
 
-def deal_cards(numhands, n=5, deck):
+def deal_cards(numhands, n=5,
+               deck=[r+s for r in "23456789TJQKA" for s in "SHDC"]):
     random.shuffle(deck)
     start = 0
     end = n
