@@ -77,7 +77,7 @@ def card_ranks(hand):
         else:
             ranks[n] = int(r)
     ranks.sort(reverse=True)
-    return ranks
+    return [5, 4, 3, 2, 1] if (ranks == [14, 5, 4, 3, 2]) else ranks
 
 
 def test():
