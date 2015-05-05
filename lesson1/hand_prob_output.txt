@@ -1,0 +1,9 @@
+      Straight Flush:  0.002 %
+      Four of a kind:  0.025 %
+          Full House:  0.145 %
+               Flush:  0.197 %
+            Straight:  0.390 %
+     Three of a kind:  2.115 %
+            Two Pair:  4.756 %
+                Pair: 42.252 %
+           High Card: 50.119 %
