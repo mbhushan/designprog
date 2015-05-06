@@ -4,7 +4,7 @@ import random
 def shuffle(deck):
     """ Knuth shuffling algorithm """
     N = len(deck)
-    for i in range(N-1):
+    for i in range(N):
         swap(deck, i, random.randrange(i, N))
     return deck
 
