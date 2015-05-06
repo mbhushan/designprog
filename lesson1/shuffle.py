@@ -1,6 +1,14 @@
 import random
 
 
+def shuffle(deck):
+    """ Knuth shuffling algorithm """
+    N = len(deck)
+    for i in range(N-1):
+        swap(deck, i, random.randrange(i, N))
+    return deck
+
+
 def shuffle_1(deck):
     """ Wrong shuffling strategy """
     N = len(deck)
@@ -22,6 +30,8 @@ def main():
     deck = [r+s for r in "23456789TJQKA" for s in "SHDC"]
     print "Wrong Shuffling Procedure: "
     print shuffle_1(deck)
+    print "Correct Shuffling - Knuth Algorithm """
+    print shuffle(deck)
 
 
 if __name__ == '__main__':
