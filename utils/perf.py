@@ -4,9 +4,9 @@ import time
 def timecall(fn, *args):
     """ Call function and return elapsed time """
     t0 = time.clock()
-    fn(*args)
+    result = fn(*args)
     t1 = time.clock()
-    return t1 - t0
+    return t1 - t0, result
 
 
 def func(n):
@@ -17,8 +17,9 @@ def func(n):
 
 def main():
     n = input("Enter positive number: ")
-    print "factorial: ", func(n)
-    print "time taken: ", timecall(func, n)
+    time, result = timecall(func, n)
+    print "factorial: ", result
+    print "time taken: ", time
 
 
 if __name__ == '__main__':
