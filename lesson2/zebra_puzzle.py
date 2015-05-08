@@ -35,10 +35,24 @@ def timecall(fn, *args):
     t1 = time.clock()
     return t1 - t0, result
 
+
+def timecalls(n, fn, *args):
+    """ Call fn n times with args; return min, avg, and max """
+    times = [timecall(fn, *args)[0] for _ in range(n)]
+    return min(times), average(times), max(times)
+
+
+def average(numbers):
+    return sum(numbers)/float(len(numbers))
+
+
 def main():
     time, result = timecall(zebra_puzzle)
     print result
     print "total time: ", time
+    x = input("how many experimental runs? ")
+    mn, avg, mx = timecalls(x, zebra_puzzle)
+    print "min: %s, max: %s, avg: %s" % (mn, avg, mx)
 
 
 if __name__ == '__main__':
