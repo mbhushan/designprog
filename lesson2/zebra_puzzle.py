@@ -1,4 +1,5 @@
 import itertools
+import time
 from neighbors import nextto
 from neighbors import imright
 
@@ -28,9 +29,16 @@ def zebra_puzzle():
                 if nextto(Kools, horse)     #12
                 )
 
+def timecall(fn, *args):
+    t0 = time.clock()
+    result = fn(*args)
+    t1 = time.clock()
+    return t1 - t0, result
 
 def main():
-    print zebra_puzzle()
+    time, result = timecall(zebra_puzzle)
+    print result
+    print "total time: ", time
 
 
 if __name__ == '__main__':
