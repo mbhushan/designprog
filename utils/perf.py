@@ -1,10 +1,10 @@
 import time
 
 
-def timecall(fn, n):
+def timecall(fn, *args):
     """ Call function and return elapsed time """
     t0 = time.clock()
-    fn(n)
+    fn(*args)
     t1 = time.clock()
     return t1 - t0
 
