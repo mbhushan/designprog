@@ -38,7 +38,12 @@ def timecall(fn, *args):
 
 def timecalls(n, fn, *args):
     """ Call fn n times with args; return min, avg, and max """
-    times = [timecall(fn, *args)[0] for _ in range(n)]
+    if isinstance(n, int):
+        times = [timecall(fn, *args)[0] for _ in range(n)]
+    else:
+        times = []
+        while sum(times) < n:
+            times.append(timecall(fn, *args)[0])
     return min(times), average(times), max(times)
 
 
