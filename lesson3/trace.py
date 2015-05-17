@@ -1,4 +1,4 @@
-
+# decorator for tracing a function - template
 
 @decorator
 def trace(f):
