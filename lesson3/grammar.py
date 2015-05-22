@@ -16,10 +16,10 @@ def split(text, sep=None, maxsplit=-1):
 
 
 def main():
-    description = "goal => expr \
-        expr => term | term - expr \
-        term => fact | fact * term \
-        fact => a | b | c "
+    description = r"""goal => expr
+        expr => term | term - expr
+        term => fact | fact * term
+        fact => a | b | c """
     print "Description: ", description
     print grammar(description)
 
