@@ -1,8 +1,9 @@
 
 
-def grammar(description):
+def grammar(description, whitespaces=r'\s*'):
     """ convert a description to grammar """
     G = {}
+    description = description.replace("\t", " ")    # no tabs
     for line in split(description, "\n"):
         lhs, rhs = split(line, " => ", 1)
         alternatives = split(rhs, " | ")
