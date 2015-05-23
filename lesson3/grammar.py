@@ -1,3 +1,5 @@
+# convert a description into grammar
+
 
 
 def grammar(description, whitespaces=r'\s*'):
